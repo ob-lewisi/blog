@@ -1,6 +1,21 @@
 import data from './data.json'
+import { useState } from 'react'
+import { useHistory } from "react-router-dom";
+
 
 const HomePage = () => {
+
+  const history = useHistory();
+
+  const [blogId, setId] = useState()
+
+  const routeChange = async (item)  => { 
+    setId(item.id)
+    let path = `/post/${blogId}`; 
+    history.push(path);
+  }
+
+  console.log("id", blogId)
 
   return (
     <>
@@ -9,7 +24,9 @@ const HomePage = () => {
         { data &&
           data.map((item) => (
             <ul>
-              <li> {item.title} </li>
+              <button onMouseEnter={() => setId(item.id)} onClick={() => routeChange(item)}  > 
+                {item.title}
+                 </button>
               </ul>
           ))}
 

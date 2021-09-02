@@ -6,12 +6,16 @@ import {
   Route
 } from "react-router-dom";
 import HomePage from './Containers/HomePage'
+import BlogPost from './Containers/BlogPost'
+
 
 function App() {
   return (
 <Router>
   <Switch prefix="/blog">
   <Route path="/home" component={HomePage}/>
+  <Route path="/post/:id" component={BlogPost}/>
+
   </Switch>
 </Router>
   );

@@ -7,4 +7,10 @@
   "id": 2,
   "title": "Second Post", 
   "text": "Second Post Txt"
+}
+,
+{
+  "id": 3,
+  "title": "3 Post", 
+  "text": "3 Post Txt"
 }]
